@@ -1,9 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from '../components/pages/Home.vue'
-import CarAddPage from '../components/pages/cars/CarAddPage.vue'
-import CarListPage from '../components/pages/cars/CarListPage.vue'
-import CarSearchPage from '../components/pages/cars/CarSearchPage.vue'
+//import CarAddPage from '../components/pages/cars/CarAddPage.vue'
+//import CarListPage from '../components/pages/cars/CarListPage.vue'
+//import CarSearchPage from '../components/pages/cars/CarSearchPage.vue'
 import CarPage from '../components/pages/cars/CarPage.vue'
+
+const CarAddPage = () => import(/* webpackChunkName: "bundle-cars" */'../components/pages/cars/CarAddPage.vue');
+const CarListPage = () => import (/* webpackChunkName: "bundle-cars" */'../components/pages/cars/CarListPage.vue');
+const CarSearchPage = () => import (/* webpackChunkName: "bundle-cars" */'../components/pages/cars/CarSearchPage.vue')
+
 
 const routes = [
     {path: '/', component: Home},
