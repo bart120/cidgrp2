@@ -30,7 +30,7 @@ export default{
                     label: 'Voitures',
                     items:[
                         {label: 'Ajouter', to:'/cars/add'},
-                        {label: 'Lister', to:'/cars/list'},
+                        {label: 'Lister', to:{name: 'carListUrl'}},
                         {label: 'Rechercher', to:'/cars/search'}
                     ]
                 }
