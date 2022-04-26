@@ -42,6 +42,10 @@ export default{
 
 
 <template>
-    <Menubar :model="items"  />
+    <Menubar :model="items">
+        <template #end>
+            <router-link to='/login'>Se connecter</router-link>
+        </template>
+    </Menubar>
   
 </template>
