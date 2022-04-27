@@ -6,7 +6,7 @@ export const useUserStore = defineStore({
     state: () => {
         return {
             //isConnected: false,
-            user: null
+            user: JSON.parse(sessionStorage.getItem('USER'))
         };
     },
     getters: {
@@ -17,9 +17,11 @@ export const useUserStore = defineStore({
             // await call auth server
             const data = { name: 'Bob', mail: login, token: 'DSQGE5Z765EY6ZT54EH' };
             this.user = data;
+            sessionStorage.setItem('USER', JSON.stringify(this.user))
         },
         logout() {
             this.user = null;
+            sessionStorage.removeItem('USER');
         }
     }
 });
