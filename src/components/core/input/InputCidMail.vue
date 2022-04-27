@@ -1,7 +1,7 @@
 <script setup>
 import InputCid from './InputCid.vue'
 
-    //defineEmits(['statusChange'])
+    //const emit = defineEmits(['statusChange'])
 </script>
 
 
@@ -16,10 +16,12 @@ import InputCid from './InputCid.vue'
                 if(regMail.test(this.valeur)){
                     this.valid = true;
                     this.$emit('statusChange', 'OK');
+                    //emit('statusChange', 'OK');
                     return;
                 }
                 this.valid = false;
                 this.$emit('statusChange', 'KO');
+                //emit('statusChange', 'KO');
             }
         },
         /*computed:{
