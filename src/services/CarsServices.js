@@ -21,5 +21,19 @@ export default class CarsService {
         return Promise.resolve(resp.data);
     }
 
+    insertCar(car) {
+        return axios.post(URL, car).then(resp => {
+            return Promise.resolve(resp.data);
+        });
+    }
+
+    async insertCarAsync(car) {
+        //car.price = parseFloat(car.price);
+        car.price = +car.price;
+        const resp = await axios.post(URL, car);
+        return await Promise.resolve(resp.data);
+    }
+
 
 }
+
