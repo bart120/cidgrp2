@@ -6,10 +6,12 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import PrimeVue from 'primevue/config'
 import router from './conf/routes';
+import { createPinia } from 'pinia'
 
 
 
 createApp(App)
-.use(router)
-.use(PrimeVue)
-.mount('#app')
+    .use(router)
+    .use(createPinia())
+    .use(PrimeVue)
+    .mount('#app')
