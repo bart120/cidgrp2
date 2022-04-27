@@ -31,7 +31,7 @@ export default{
         return {
             items :[
                 {
-                   label: 'Accueil',
+                   label: this.$t('menu.home'),
                    icon:'pi pi-fw pi-file',
                    to: '/'
                 },{
@@ -59,7 +59,7 @@ export default{
     <Menubar :model="items">
         <template #end>
             <div v-if="! isConnected">
-                <router-link to='/login'>Se connecter</router-link>
+                <router-link to='/login'>{{this.$t('menu.login')}}</router-link>
             </div>
             <div v-else>
                 Bonjour {{user?.name}} <Button type="button" @click="onLogout">Se déconnecter</Button>
